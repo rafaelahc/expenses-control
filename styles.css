@@ -1,0 +1,306 @@
+:root {
+    --warning-background: #f1f1f5;
+    --body-background: #f2efef;
+    --card-background: linear-gradient(to bottom left, #ef8d9c 40%, #ffc39e 100%);
+    --page-title-font: "Abril Fatface", serif;
+    --font: "Wix Madefor Text", sans-serif;
+    --box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+
+body {
+    background-color: var(--body-background);
+
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main h1 {
+    font-family: var(--page-title-font);
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.main .currencies-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+.main .currencies-container .currency-type-btn {
+    font-size: 1rem;
+    margin: 10px;
+    background-color: transparent;
+    font-weight: 500;
+}
+
+.main .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4rem auto;
+}
+
+.main .cards-container .cards-item {
+    width: 100%;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+
+    .main .cards-container .cards-item{
+        width: 50%;
+    }
+
+    .card-header i {
+        display: none;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .main .currencies-container {
+        position: absolute;
+        top: -15px;
+        right: 30px;
+    }
+}
+
+.main .cards-container .cards-item .card {
+    border-radius: 0.25rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main .cards-container .cards-item .card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0.5rem;
+    background: var(--card-background);
+    padding: 1rem;
+    position: relative;
+}
+
+.main .cards-container .cards-item .card .card-header .total-display {
+    position: absolute;
+    top: 33px;
+    left: 40px;
+}
+
+.main .cards-container .cards-item .card .card-header input {
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    max-width: 120px;
+    color: #000;
+}
+
+.main .cards-container .cards-item .card .card-header .balance-warning {
+    font-size: 13px;
+    background-color: var(--warning-background);
+    border-radius: 9px;
+    padding: 0 8px;
+}
+
+.main .cards-container .cards-item .card .card-header::before {
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+#inflows .card .card-header::before {
+    content: "Entradas";
+}
+
+#fixed .card .card-header::before {
+    content: "Fixos e variáveis";
+}
+
+#grocery .card .card-header::before {
+    content: "Mercado";
+}
+
+#entertainment .card .card-header::before {
+    content: "Lazer e outros";
+}
+
+/*card body starts here*/
+
+.main .cards-container .cards-item .card .card-body {
+    padding: 1rem 0.5rem;
+    background: var(--card-background);
+}
+
+.main .cards-container .cards-item .card .card-body .list {
+    max-height: 200px;
+    overflow-y: scroll; 
+    height: 100px;
+}
+
+.main .cards-container .cards-item .card .card-body .list {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255, 255, 255) rgba(161, 139, 139, 0.048);
+}
+
+
+.card-list-container::-webkit-scrollbar {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px; 
+    width: 15px;
+}
+
+.card-list-container::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+} 
+
+
+.main .cards-container .cards-item .card .card-body .list .card-list-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.main .cards-container .cards-item .card .card-body .list .card-list-items input {
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.main .cards-container .cards-item .card .card-body .list .card-list-items .btn-group {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}  
+
+.main .cards-container .cards-item .card .card-body .list .card-list-items .btn-check {
+    margin-right: 10px;
+}
+
+.btn-group button, .btn-check {
+    background: transparent;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-group button i:last-child {
+    margin-left: 10px;
+}
+
+
+/*Add new item section starts here*/
+.card-add-new-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin-top: 1rem;
+}
+
+.card-add-new-items input {
+    background-color: #f1f1f5;
+    border-radius: 4px;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.card-add-new-items > * {
+    padding: 0.3rem;
+}
+
+.card-add-new-items .btn-add {
+    color: #000;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+/* Percentage container starts here */
+
+.percentage {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+
+.percentage input {
+    /* border-bottom: 1px solid; */
+    text-align: center;
+    font-size: 18px;
+    margin-left: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.percentage input:focus {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.percentage .percentage-btn {
+    border-radius: 4px;
+    background-color: #ef8d9c;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 10px;
+    
+}
+
+
+@media screen and (max-width: 768px) {
+    .hide {
+        height: 0;
+        overflow: hidden;
+        transition: .6s;
+        padding: 0 0.5rem;   
+    }
+    
+    .card-header.open + .card-body {
+        height: 200px;
+     }
+    
+}

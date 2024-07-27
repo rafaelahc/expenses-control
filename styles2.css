@@ -1,0 +1,99 @@
+:root {
+    --warning-background: #f1f1f5;
+    --body-background: #f1f1f1;
+    --header-background: #fff;
+    --card-background: linear-gradient(to bottom left, #ef8d9c 40%, #ffc39e 100%);
+    --page-title-font: "Abril Fatface", serif;
+    --font: "Wix Madefor Text", sans-serif;
+    --box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+
+body {
+    background-color: var(--body-background);
+
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main .header {
+    background-color: var(--header-background);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+@media (min-width: 768px) {
+
+    .main .header {
+        flex-direction: row;
+        justify-content: space-between;
+    
+    }
+
+    .main .cards-container .cards-item{
+        width: 50%;
+    }
+
+    .card-header i {
+        display: none;
+    }
+
+}
+
+.main .cards-container .cards-item .card {
+    border-radius: 0.25rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main .cards-container .cards-item .card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0.5rem;
+    background: transparent;
+    padding: 1rem;
+    position: relative;
+}
+

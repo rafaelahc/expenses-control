@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Gastos</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="main">
+        <header class="header">
+            <h1>Controle Financeiro</h1>
+
+            <div class="currencies-container">
+                <!-- <h3>Escolha a moeda:</h3> -->
+                <button id="eur" class="currency-type-btn">EUR</button>
+                <button id="brl" class="currency-type-btn">BRL</button>
+                <button id="gbp" class="currency-type-btn">GBP</button>
+                <button id="usd" class="currency-type-btn">USD</button>
+            </div>
+        </header>
+
+
+        <div class="cards-container">
+
+            <div id="inflows" class="cards-item">
+                <div class="card">
+
+                    <div class="card-header">
+                      <span id="total-currency-inflows" class="currency-symbol">€</span>
+                      <input type="text" id="total-display-inflows" class="total-display" placeholder="0.00" readonly>
+                      <span id="warning-inflows" class="balance-warning"></span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+    
+                    <div class="card-body hide">
+                        <div id="list-inflows" class="list">
+                            <!-- <div class="card-list-items">        
+                                <input type="text" class="description" placeholder="Salário" readonly>
+                                <span class="currency">€</span>
+                                <input type="text" class="value" placeholder="0.00" readonly>
+                                <div class="btn-group">
+                                    <button onclick="editItem('${list.desc}', '${list.value}')" class="btn-edit"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash"></i></button> 
+                                </div>
+   
+                            </div> -->
+                        </div>
+
+                        <div class="card-add-new-items">
+                            <input type="text" id="input-add-description-inflows" class="new-description" placeholder="descrição">
+                            <input type="number" id="input-add-value-inflows" class="new-value" placeholder="0.00">
+                            <button id="btn-add-inflows" class="btn-add">Adicionar</button>
+                        </div>
+
+                    </div>
+        
+                </div>
+            </div>
+
+            <div id="fixed" class="cards-item">
+                <div class="card">
+
+                    <div class="card-header">
+                      <span id="total-currency-fixed" class="currency-symbol">€</span>
+                      <input type="text" id="total-display-fixed" class="total-display" placeholder="0.00" readonly>
+                      <span id="warning-fixed" class="balance-warning"></span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+    
+                    <div class="card-body hide">
+                        <div id="list-fixed" class="list">
+                            <!-- <div class="card-list-items">
+                                <button class="btn-check"><i class="fa-regular fa-circle"></i></button>
+                                <input type="text" class="description"  placeholder="salário" readonly>
+                                <span class="currency">€</span>
+                                <input type="text" class="value"  placeholder="0.00" readonly>
+                                <div class="btn-group">
+                                    <button onclick="editItem('${list.desc}', '${list.value}')" class="btn-edit"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>   
+                                </div>
+                            </div> -->
+                        </div>
+
+                        <div class="card-add-new-items">
+                            <input type="text" id="input-add-description-fixed" class="new-description" placeholder="descrição">
+                            <input type="number" id="input-add-value-fixed" class="new-value" placeholder="0.00">
+                            <button id="btn-add-fixed" class="btn-add">Adicionar</button>
+                        </div>
+
+                    </div>    
+                </div>
+            </div>
+
+            <div id="grocery" class="cards-item">
+                <div class="card">
+
+                    <div class="card-header">
+                      <span id="total-currency-grocery" class="currency-symbol">€</span>
+                      <input type="text" id="total-display-grocery" class="total-display" placeholder="0.00" readonly>
+                      <span id="warning-grocery" class="balance-warning"></span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+    
+                    <div class="card-body hide">
+                        <div id="list-grocery" class="list">
+                        </div>
+
+                        <div class="card-add-new-items">
+                            <input type="text" id="input-add-description-grocery" class="new-description" placeholder="descrição">
+                            <input type="number" id="input-add-value-grocery" class="new-value" placeholder="0.00">
+                            <button id="btn-add-grocery" class="btn-add">Adicionar</button>
+                        </div>
+
+                    </div>
+        
+                </div>
+            </div>
+
+
+            <div id="entertainment" class="cards-item">
+                <div class="card">
+
+                    <div class="card-header">
+                      <span id="total-currency-entertainment" class="currency-symbol">€</span>
+                      <input type="text" id="total-display-entertainment" class="total-display" placeholder="0.00" readonly>
+                      <span id="warning-entertainment" class="balance-warning"></span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+    
+                    <div class="card-body hide">
+                        <div id="list-entertainment" class="list">
+                        </div>
+
+                        <div class="card-add-new-items">
+                            <input type="text" id="input-add-description-entertainment" class="new-description" placeholder="descrição">
+                            <input type="number" id="input-add-value-entertainment" class="new-value" placeholder="0.00">
+                            <button id="btn-add-entertainment" class="btn-add">Adicionar</button>
+                        </div>
+
+                    </div>
+        
+                </div>
+            </div>
+
+            <div id="grocery-percentage-cotainer" class="cards-item percentage">
+                <div>
+                    <label for="grocery-percentage-entered">Digite o percentual para gastos com mercado:</label>
+                    <input type="number" id="grocery-percentage-entered" min="0" max="100" placeholder="">
+                    <span>%</span>
+                </div>
+
+                <div>
+                    <button id="grocery-percentage-btn" class="percentage-btn">+</button>
+                </div>
+
+            </div>
+            
+            <div id="entertainment-percentage-cotainer" class="cards-item percentage">
+                <div>
+                    <label for="entertainment-percentage-entered">Digite o percentual para gastos com lazer e outros:</label>
+                    <input type="number" id="entertainment-percentage-entered" min="0" max="100" placeholder="">
+                    <span>%</span>
+                </div>
+                <div> 
+                    <button id="entertainment-percentage-btn" class="percentage-btn">+</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
